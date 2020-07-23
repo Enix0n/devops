@@ -358,8 +358,8 @@
 							"    pm.response.to.have.header(\"Content-Type\");\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Response time is less than 200ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"pm.test(\"Response time is less than 450ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(450);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -391,61 +391,6 @@
 					"path": [
 						"api",
 						"games"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Получить информацию о конкретной игре",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "a03e1d21-150c-4ceb-bca8-7d0b61a8b2b6",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response time is less than 200ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"team2Stats\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://104.40.150.146/api/game/{{idGame}}",
-					"protocol": "http",
-					"host": [
-						"104",
-						"40",
-						"150",
-						"146"
-					],
-					"path": [
-						"api",
-						"game",
-						"{{idGame}}"
 					]
 				}
 			},
@@ -500,57 +445,6 @@
 					"path": [
 						"api",
 						"game"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Удалить игру",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "cb1a94fb-f348-4865-9d26-b65007948c6b",
-						"exec": [
-							"pm.test(\"Status code is 202\", function () {\r",
-							"    pm.response.to.have.status(202);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response time is less than 200ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://104.40.150.146/api/game/{{idGame}}",
-					"protocol": "http",
-					"host": [
-						"104",
-						"40",
-						"150",
-						"146"
-					],
-					"path": [
-						"api",
-						"game",
-						"{{idGame}}"
 					]
 				}
 			},
