@@ -6,62 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Регистрация пользователя",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "2800c9b0-8fe6-4977-8e96-d80961faed40",
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"\r",
-							"postman.setGlobalVariable(\"id\", jsonData.id);\r",
-							"\r",
-							"pm.test(\"Status code is 201\", function () {\r",
-							"    pm.response.to.have.status(201);\r",
-							"});\r",
-							"pm.test(\"Content-Type is present\", function () {\r",
-							"    pm.response.to.have.header(\"Content-Type\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"Login\": \"{{login}}\",\r\n  \"NativeName\": \"string47\",\r\n  \"Password\": \"{{Pass}}\",\r\n  \"ConfirmPassword\": \"{{Pass}}\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://104.40.150.146/api/user",
-					"protocol": "http",
-					"host": [
-						"104",
-						"40",
-						"150",
-						"146"
-					],
-					"path": [
-						"api",
-						"user"
-					]
-				},
-				"description": "Необходимо выполнить хотя бы один раз и получить ид пользователя"
-			},
-			"response": []
-		},
-		{
 			"name": "Токен",
 			"event": [
 				{
@@ -130,6 +74,10 @@
 					"script": {
 						"id": "99d583ce-ec43-44f6-8bbc-f8f94f4aaffa",
 						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"postman.setGlobalVariable(\"id\", jsonData.id);\r",
+							"\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
