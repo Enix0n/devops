@@ -15,7 +15,7 @@
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);\r",
 							"\r",
-							"postman.setGlobalVariable(\"token\", jsonData.access_token);\r",
+							"pm.environment.set(\"token\", jsonData.access_token);\r",
 							"\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
