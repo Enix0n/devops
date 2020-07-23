@@ -76,8 +76,7 @@
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);\r",
 							"\r",
-							"postman.setGlobalVariable(\"id\", jsonData.id);\r",
-							"\r",
+							"pm.environment.set(\"id\", jsonData.id);\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
@@ -177,8 +176,7 @@
 					"script": {
 						"id": "8fe54db2-16e8-4607-a5c7-da46165d35ca",
 						"exec": [
-							"pm.globals.set(\"Pass\", pm.globals.get(\"PassN\"));\r",
-							"\r",
+							"pm.variables.set(\"Pass\", 'pm.globals.get(\"PassN\")');\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
@@ -289,8 +287,7 @@
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);\r",
 							"\r",
-							"postman.setGlobalVariable(\"idGame\", jsonData.id);\r",
-							"\r",
+							"pm.environment.set(\"idGame\", jsonData.id);\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
@@ -555,6 +552,28 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7c745545-b97c-4de0-9633-2afb6053f94c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "47d6d2e1-5e46-4ff5-8e74-5546e25cdd0a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"protocolProfileBehavior": {}
